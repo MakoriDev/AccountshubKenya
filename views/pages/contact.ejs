@@ -1,0 +1,40 @@
+<!-- Contact Form -->
+<div class="container contact-container">
+    <h2>Contact Us</h2>
+    <p>Leave your message and we will get back to you shortly</p>
+    <form action="">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input id="name" class="form-control" type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input id="subject" class="form-control" type="text" placeholder="Subject" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea id="message" rows="10" placeholder="Your Message" class="form-control" required></textarea>
+        </div>
+        
+        <button type="button" class="btn btn-success" onclick="sendToWhatsapp()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function sendToWhatsapp(){
+        let number = "+254700205302";
+    
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('subject').value;
+        let message = document.getElementById('message').value;
+    
+        var url = "https://wa.me/" + number + "?text="
+        + "Name : " +name+ "%0a"
+        + "Subject : " +email+ "%0a"
+        + "Message : " +message+ "%0a%0a";
+    
+        window.open(url, '_blank').focus();
+    }
+</script>

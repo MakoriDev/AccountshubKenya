@@ -1,0 +1,40 @@
+<div class="formbold-form-wrapper">
+    <form action="/sell-account" method="POST">
+        <div class="formbold-input-flex">
+            <h5> SELL ACCOUNT TODAY, IT WILL TAKE LESS THAN A MINUTE</h5>
+            <h6>By posting your account, we will help you sell it a a reasonable price. Our Alogrithm will match you
+                with
+                prospective buyers</h6>
+        </div>
+
+        <div class="mb-3">
+            <label for="account_name" class="form-label"> Account Name </label>
+            <input type="text" name="account_name" id="account_name" placeholder="Account Name" class="form-control" required/>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location </label>
+            <input type="text" name="location" id="location" placeholder="Location" class="form-control" required/>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label"> Price </label>
+            <input type="text" name="price" id="price" placeholder="$ 0.00" class="form-control" required/>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="description" class="form-label"> Description: </label>
+            <textarea rows="6" name="description" id="description" placeholder="Type your message"
+                class="form-control" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="phone_number" class="form-label"> Phone Number </label>
+            <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number" class="form-control" required/>
+        </div>
+
+
+        <button type="submit" class="formbold-btn">POST</button>
+    </form>
+</div>
