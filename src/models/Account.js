@@ -8,11 +8,11 @@ class Account{
     }
 
     static create(accountData) {
-        const sql = "INSERT INTO accounts (account_name, location, price, description, phone_number) VALUES (?,?,?,?,?)";
+        const sql = "INSERT INTO accounts (account_name, price, description, phone_number) VALUES (?,?,?,?)";
 
-        const { account_name, location, price, description, phone_number } = accountData
+        const { account_name, price, description, phone_number } = accountData
 
-        return db.execute(sql, [account_name, location, price, description, phone_number]);
+        return db.execute(sql, [account_name, price, description, phone_number]);
     }
 }
 
