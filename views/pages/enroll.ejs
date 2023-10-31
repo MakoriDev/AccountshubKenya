@@ -3,18 +3,17 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <h2 class="text-center mb-4">Register for Our Training Classes</h2>
-            <!-- Add your registration form here -->
-            <form>
-                <!-- Form fields (Name, Email, etc.) -->
-                <!-- Modal for Registration -->
-                <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+        <button type="button" class="btn btn-primary rounded-0 py-4 px-lg-5" onclick="openRegistrationModal()">Learn
+            <i class="fa fa-arrow-right ms-3"></i>
+        
+        </button>
+        
+        <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form>
@@ -25,22 +24,20 @@
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" class="form-control" id="password" required>
+                                        <button type="button" class="">Submit</button>
+
                                     </div>
-                                    <a href="#" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block"
-                                        onclick="openRegistrationModal()">Learn<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-
-
-                                </form>
+                            </form>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </form>
+                            </div>
+                            </div>
+                            </div>
         </div>
+    
+
     </div>
+    <br>
+    <!-- Payment Button -->
 </section>
 
 <!-- Free Study Resources Section -->
@@ -50,7 +47,8 @@
             <div class="col-lg-8 text-center">
                 <h2 class="mb-4">Free Study Resources</h2>
                 <p>Access our collection of study materials to enhance your learning experience.</p>
-                <a href="#study-resources" class="btn btn-primary">View Resources</a>
+                <a href="#study-resources" class="btn btn-primary">Free Resources</a>
+                <button type="button" class="btn btn-success" onclick="handlePayment()">Premium Materials</button>
             </div>
         </div>
     </div>
@@ -69,16 +67,33 @@
 <section id="view-resources" class="container py-5">
     <div class="row">
         <!-- Post 1 -->
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-lg-3 col-md-6 mb-4 clickable-card" data-toggle="modal" data-target="#remotasksModal">
             <div class="card">
                 <img src="/public/img/seg.jpg" class="card-img-top" alt="Post 1 Image">
                 <div class="card-body">
                     <h5 class="card-title">Remotasks Exams</h5>
                     <p class="card-text">Learn the basics of Remotasks exams</p>
-                </div>
-            </div>
-        </div>
-
+                    <a href="/src/docs/CloudPresentation%20Ngaire.pptx" class="btn btn-primary">Download Basics of Remotasks Exams</a>
+                    </div>
+                    </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="remotasksModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Remotasks Exams</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Add your modal content here -->
+                                    <p>There are different flavors of remotasks exams. The most common exams are English, biology, Nursing
+                                        and Law. </p>
+                                    <p>You must pass these exams to get a project in Remotask</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         <!-- Post 2 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
@@ -113,3 +128,20 @@
         </div>
     </div>
 </section>
+<script>
+    function openRegistrationModal() {
+        var modal = new bootstrap.Modal(document.getElementById('registrationModal'));
+        modal.show();
+    }
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const clickableCard = document.querySelector('.clickable-card');
+        clickableCard.addEventListener('click', function () {
+            var modal = new bootstrap.Modal(document.getElementById('remotasksModal'));
+            modal.show();
+        });
+    });
+</script>

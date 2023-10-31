@@ -14,8 +14,6 @@
             <input type="text" name="account_name" id="account_name" placeholder="Account Name" class="form-control" required/>
         </div>
 
-    
-
         <div class="mb-3">
             <label for="price" class="form-label"> Price </label>
             <input type="text" name="price" id="price" placeholder="ksh 0.00" class="form-control" required />
@@ -26,16 +24,28 @@
                 <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number" class="form-control" required />
         </div>
 
-
-        <div class="mb-3">
-            <label for="description" class="form-label"> Description: </label>
-            <textarea rows="6" name="description" id="description" placeholder="Type your message"
-                class="form-control" required></textarea>
-        </div>
-
-    
-
-
         <button type="submit" class="formbold-btn">POST</button>
-    </form>
-</div>
+        </form>
+        </div>
+        <script>
+            document.getElementById('price').addEventListener('input', function () {
+                // Remove any non-numeric characters
+                this.value = this.value.replace(/\D/g, '');
+
+                if (this.value.length > 7) {
+                    this.value = this.value.slice(0, 7);
+                }
+            });
+
+
+                document.getElementById('phone_number').addEventListener('input', function () {
+                    let phoneNumber = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+
+                // Check if the phone number starts with 07 or +2547 and has exactly 10 digits
+                if (/^(07|\+2547)\d{8}$/.test(phoneNumber)) {
+                    this.setCustomValidity(''); // Valid input
+                } else {
+                    this.setCustomValidity('Please enter a valid phone number'); // Invalid input
+                }
+            });
+        </script>
