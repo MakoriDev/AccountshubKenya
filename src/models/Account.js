@@ -10,10 +10,13 @@ class Account{
     static create(accountData) {
         const sql = "INSERT INTO accounts (account_name, price, description, phone_number) VALUES (?,?,?,?)";
 
-        const { account_name, price, description, phone_number } = accountData
+        const { account_name, price, phone_number } = accountData
 
-        return db.execute(sql, [account_name, price, description, phone_number]);
+        return db.execute(sql, [account_name, price, phone_number]);
     }
 }
 
 module.exports = Account
+
+
+
