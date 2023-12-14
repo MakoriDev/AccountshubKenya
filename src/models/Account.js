@@ -8,7 +8,7 @@ class Account{
     }
 
     static create(accountData) {
-        const sql = "INSERT INTO accounts (account_name, price, description, phone_number) VALUES (?,?,?,?)";
+        const sql = "INSERT INTO accounts (account_name, price, phone_number) VALUES (?,?,?,?)";
 
         const { account_name, price, phone_number } = accountData
 
